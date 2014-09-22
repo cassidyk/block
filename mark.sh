@@ -10,8 +10,9 @@ echo "$c" > block.txt
 
 a='string.txt'
 #b=$(cat $a | tr [:graph:] '.' | tr [:blank:] '|' | tr '\n' '*' | tr -s '.' | tr -s '.' ' ')
-b=$(cat $a | tr [:graph:] '.' | tr [:blank:] '|' | tr '\n' '*' | tr -s '.' | tr '.' '\n' | sed /^$/d)
-IFS=$'\n' read -d '' -r -a c < <(echo "$b")
+#b=$(cat $a | tr [:graph:] '.' | tr [:blank:] '|' | tr '\n' '*' | tr -s '.' | tr '.' '\n' | sed /^$/d)
+b=$(cat $a | tr [:graph:] '.' | tr [:blank:] '|' | tr '\n' '*' | tr -s '.' | tr '.' '\n')
 
 echo "$b"
+#IFS=$'\n' read -d '' -r -a c < <(echo "$b")
 #echo "${c[@]}"
