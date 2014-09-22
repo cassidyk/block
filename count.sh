@@ -1,4 +1,5 @@
 ## input may have a mark appended by output. determine where it happens and when this is a string or a block
+ # exist? tr on input or output
 
 # mark not $1
 if [[ "$1" == '*' ]]; then
