@@ -4,7 +4,7 @@ a='string.txt'
 b=$(< $a)
 c=$(echo $b | tr ' ' '\n')
 
-echo "$c" > block.txt
+echo "$c" > block.txt # unique name and mapping
 
 # #!clear $VARS
 
