@@ -1,7 +1,14 @@
 ## input may have a mark appended by output. determine where it happens and when this is a string or a block
 
+# mark not $1
+if [[ "$1" == '*' ]]; then
+  mark='|'
+else
+  mark='*'
+fi
+
 while read line
 do
-  a=$(echo "$line" | tr -d '*' | wc -m)
+  a=$(echo "$line" | tr -d "$mark" | wc -m)
   echo "$a" >> `date +%s.%N`
 done
