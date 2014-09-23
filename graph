@@ -7,11 +7,14 @@ fi
 
 read -a a
 b=$(echo "$a" | tr -s '.' | tr '.' '\n') # collapse and rename
-
+I=0
 while read line
 do
   a=$(echo "$line" | tr -d "$mark")
-  #mkdir -p $line
-  #echo "$a" >> "$line\`date +%s.%N`"
+  #mkdir -p ./out/graph/$line  #build filesystem to handle all characters
+  mkdir -p ./out/graph/$I
+  echo "$a" >> "./out/graph/$I/`date +%s.%N`"
   echo "$a"
+
+  I=$((I+1))
 done < <(echo "$b")

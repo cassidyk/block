@@ -6,7 +6,7 @@ a='./in/string.txt'
 b=$(< $a)
 c=$(echo $b | tr ' ' '\n')
 
-echo "$c" > $O # unique name and mapping
+echo "$c" >> $O # unique name and mapping
 
 # #!clear $VARS
 
@@ -18,6 +18,5 @@ a='./in/string.txt'  ## match
 
 b=$(cat $a | tr [:graph:] '.' | tr [:blank:] '|' | tr '\n' '*') # [:graph:] needed to transform before addition, unless addition is readable or guessed
 
+echo "$b" >> ./out/madlib.txt
 echo "$b"
-#IFS=$'\n' read -d '' -r -a c < <(echo "$b")
-#echo "${c[@]}"
