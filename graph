@@ -17,4 +17,4 @@ do
   echo "$a"
 
   I=$((I+1))
-done < <(echo "$b")
+done <<< "$b"
